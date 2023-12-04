@@ -5,8 +5,7 @@ const getAllUsers = async (req, res) => {
         const userSelect = 'SELECT * FROM User';
         const result = await db.query(userSelect);
         res.status(200).json({
-            message: "OK",
-            result: result
+            message: "OK"
         });
     } catch (err) {
         console.error(err);
@@ -20,8 +19,7 @@ const getUser = async (req, res) => {
         const userSelect = 'SELECT * FROM User WHERE User_id = ?';
         const result = await db.query(userSelect, id);
         res.status(200).json({
-            message: "OK",
-            result: result
+            message: "OK"
         });
     } catch (err) {
         console.error(err);
@@ -38,7 +36,6 @@ const addUser = async (req, res) => {
         const insertID = result.insertId;
         res.status(200).json({
             message: "OK",
-            result: result,
             insertID: insertID
         });
     } catch (err) {
@@ -54,8 +51,7 @@ const updateUser = async (req, res) => {
         const userUpdate = 'UPDATE User SET User_name = ?, User_password = ?, User_email = ? WHERE User_id = ?';
         const result = await db.query(userUpdate, [name, password, email, id]);
         res.status(200).json({
-            message: "OK",
-            result: result,
+            message: "OK"
         });
     } catch (err) {
         console.error(err);
@@ -69,8 +65,7 @@ const deleteUser = async (req, res) => {
         const userDelete = 'DELETE FROM User WHERE User_id = ?';
         const result = await db.query(userDelete, id);
         res.status(200).json({
-            message: "OK",
-            result: result,
+            message: "OK"
         });
     } catch (err) {
         console.error(err);
