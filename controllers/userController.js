@@ -13,7 +13,7 @@ const getAllUsers = async (req, res) => {
 const getUser = async (req, res) => {
     try {
         const id = req.params.id;
-        const userSelect = 'SELECT * FROM User WHERE userID = ?';
+        const userSelect = 'SELECT * FROM User WHERE User_id = ?';
         const result = await db.query(userSelect, id);
         res.json(result);
     } catch (err) {
@@ -24,7 +24,7 @@ const getUser = async (req, res) => {
 const addUser = async (req, res) => {
     try {
         const {name, password, email} = req.body;
-        const userCreate = 'INSERT INTO User (userName, userPassword, userEmail) VALUES (?,?,?)';
+        const userCreate = 'INSERT INTO User (User_name, User_password, User_email) VALUES (?,?,?)';
         const result = await db.query(userCreate, [name, password, email]);
 
         const insertID = result.insertId;
@@ -38,7 +38,7 @@ const updateUser = async (req, res) => {
     try {
         const id = req.params.id;
         const {name, password, email} = req.body;
-        const userUpdate = 'UPDATE User SET userName = ?, userPassword = ?, userEmail = ? WHERE userID = ?';
+        const userUpdate = 'UPDATE User SET User_name = ?, User_password = ?, User_email = ? WHERE User_id = ?';
         const result = await db.query(userUpdate, [name, password, email, id]);
         res.json(result);
     } catch (err) {
@@ -49,7 +49,7 @@ const updateUser = async (req, res) => {
 const deleteUser = async (req, res) => {
     try {
         const id = req.params.id;
-        const userDelete = 'DELETE FROM User WHERE userID = ?';
+        const userDelete = 'DELETE FROM User WHERE User_id = ?';
         const result = await db.query(userDelete, id);
         res.json(result);
     } catch (err) {
