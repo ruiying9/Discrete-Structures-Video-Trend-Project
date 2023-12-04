@@ -6,7 +6,8 @@ const getAllUsers = async (req, res) => {
         const result = await db.query(userSelect);
         res.json(result);
     } catch (err) {
-        res.status(500).send('err');
+        console.error(err);
+        res.status(500).send(err.message);
     }
 }
 
@@ -17,7 +18,8 @@ const getUser = async (req, res) => {
         const result = await db.query(userSelect, id);
         res.json(result);
     } catch (err) {
-        res.status(500).send('err');
+        console.error(err);
+        res.status(500).send(err.message);
     }
 }
 
@@ -30,7 +32,8 @@ const addUser = async (req, res) => {
         const insertID = result.insertId;
         res.json({insertID: insertID});
     } catch (err) {
-        res.status(500).send('err')
+        console.error(err);
+        res.status(500).send(err.message);
     }
 }
 
@@ -42,7 +45,8 @@ const updateUser = async (req, res) => {
         const result = await db.query(userUpdate, [name, password, email, id]);
         res.json(result);
     } catch (err) {
-        res.status(500).send('err')
+        console.error(err);
+        res.status(500).send(err.message);
     }
 }
 
@@ -53,7 +57,8 @@ const deleteUser = async (req, res) => {
         const result = await db.query(userDelete, id);
         res.json(result);
     } catch (err) {
-        res.status(500).send('err')
+        console.error(err);
+        res.status(500).send(err.message);
     }
 }
 
