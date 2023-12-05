@@ -344,7 +344,6 @@ body {
 
 #search-button {
   background-image: url('img/search.svg');
-  background-size: cover;
   border: none;
   position: absolute;
   width: 24px;
