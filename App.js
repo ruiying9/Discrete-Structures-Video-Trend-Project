@@ -5,7 +5,7 @@ var express = require('express');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var videosRouter = require('./routes/videos'); // Include this only if videos.js exists in routes
+var videosRouter = require('./routes/videosRouter');
 
 var app = express();
 
