@@ -18,14 +18,3 @@ app.use('/videos', videosRouter); // Include this only if videos.js exists in ro
 // error handler...
 
 module.exports = app;
-
-// app.js
-// ... other imports and setup ...
-
-var videosRouter = require('./routes/videos');
-
-// ... other app.use middleware ...
-
-app.use('/videos', videosRouter);
-
-// ... rest of your app.js code ...
