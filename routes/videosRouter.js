@@ -1,5 +1,6 @@
-var videosRouter = require('./routes/videos'); // If you have a videos.js in your routes directory
-// ... existing code ...
+const express = require('express');
+const router = express.Router();
+const videoController = require('../controllers/video');
 
-app.use('/videos', videosRouter);
-// ... existing code ...
+router.get('/search', videoController.searchVideos);
+module.exports = router;
