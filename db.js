@@ -7,6 +7,13 @@ const connection = mysql.createConnection({
   database : 'mydatabase'
 });
 
+const search = async (term, sortBy = 'Video_ID', order = 'ASC') => {
+  const query = "SELECT * FROM Video WHERE Video.Title LIKE ? ORDER BY ?? " + order;
+  const results = await connection.query(query, [`%${term}%`, sortBy]);
+  return results;
+}
+
+
 connection.connect((err) => {
   if (err) throw err;
 });
@@ -15,4 +22,7 @@ connection.on('connect', () => {
     console.log('Database connection established successfully.');
   });
 
-module.exports = connection;
+module.exports = {
+  connection,
+  search
+};
