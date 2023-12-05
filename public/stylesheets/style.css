@@ -334,23 +334,13 @@ body {
   white-space: nowrap;
 }
 
-.home-screen .search-bar {
+
+.home-screen .group-4 {
   position: absolute;
   width: 218px;
   height: 32px;
   top: 0;
   left: 811px;
-}
-
-#search-button {
-  background-image: url('img/search.svg');
-  border: none;
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 2px;
-  left: 0;
-  cursor: pointer;
 }
 
 .home-screen .group-5 {
