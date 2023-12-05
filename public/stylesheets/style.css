@@ -1,3 +1,8 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+
 .home-screen {
   background-color: #fcf8f4;
   display: flex;
@@ -253,6 +258,7 @@
   height: 58px;
   top: 227px;
   left: 304px;
+  color: #ffffff;
 }
 
 .home-screen .text-wrapper-9 {
