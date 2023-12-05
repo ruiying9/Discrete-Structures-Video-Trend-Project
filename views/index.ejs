@@ -35,13 +35,15 @@
               <div class="text-wrapper-12">Anime</div>
               <div class="text-wrapper-13">Technology</div>
             </div>
-            <div class="group-4">
+            <div class="search-bar">
               <div class="group-5">
                 <img class="ellipse" src="img/ellipse-757.svg" />
                 <div class="text-wrapper-14">Sakanaya</div>
               </div>
-              <img class="search" src="img/search.svg" />
-              <img class="bell" src="img/bell.svg" />
+              <form action="/search" method="get">
+                <input type="text" name="query" id="search-bar" placeholder="Search Your Videos">
+                <button type="submit" id="search-button"></button>
+              </form>
             </div>
           </div>
           <div class="group-6">
