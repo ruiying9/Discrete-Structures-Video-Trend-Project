@@ -283,12 +283,46 @@ body {
 }
 
 .home-screen .group-2 {
+  display: flex;
+  justify-content: space-between; /* This separates the child elements */
+  align-items: center; /* This centers them vertically */
   position: absolute;
   width: 1029px;
   height: 32px;
   top: 44px;
   left: 332px;
 }
+
+.home-screen .search-container {
+  flex-grow: 1; /* Allows the search container to grow and use up available space */
+  display: flex;
+  justify-content: center; /* This centers the search form */
+}
+
+.home-screen .search-form {
+  display: flex;
+  align-items: center; /* This aligns the search input and button vertically */
+}
+
+#search-bar {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px; /* Adds some space between the input and the button */
+}
+
+#search-button {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#search-button img {
+  width: 24px; /* Set image size as needed */
+  height: auto; /* Maintains the aspect ratio */
+}
+
 
 .home-screen .group-3 {
   position: absolute;
