@@ -29,8 +29,17 @@ const saveVideoForUser = (userId, videoId, callback) => {
   });
 };
 
+const deleteVideoForUser = (userId, videoId, callback) => {
+    const query = "DELETE FROM SavedVideos WHERE userId = ? AND videoId = ?";
+    connection.query(query, [userId, videoId], function(error, results, fields) {
+        if (error) throw error;
+        callback(results);
+    });
+};
+
 module.exports = {
   connection,
   search,
-   saveVideoForUser
+  saveVideoForUser,
+  deleteVideoForUser
 };
