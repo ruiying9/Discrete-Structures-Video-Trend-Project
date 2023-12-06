@@ -20,6 +20,15 @@ exports.saveVideo = function(req, res) {
   });
 };
 
+exports.deleteVideo = function(req, res) {
+    const userId = req.user.id; // Assuming user authentication
+    const videoId = req.body.videoId; // ID of the video to delete
+
+    db.deleteVideoForUser(userId, videoId, function(results) {
+        res.json({ success: true, message: "Video deleted successfully." });
+    });
+};
+
 
 // routes/videos.js
 const express = require('express');
