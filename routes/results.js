@@ -2,8 +2,10 @@ const express = require('express')
 const router = express.Router()
 const userController = require('../controllers/userController');
 
-/* GET users listing. */
-router.get('/', userController.getAllUsers);
+/* GET result page. */
+router.get('/', function(req, res, next) {
+    res.render('results');
+  });
 
 /* Create one user */
 router.post('/', userController.addUser);

@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
+var resultsRouter = require('./routes/results');
 //var videosRouter = require('./routes/videos');
 
 var app = express();
@@ -29,6 +30,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
+app.use('/results', resultsRouter);
 //app.use('/videos', videosRouter); // Use the videos router for video-related routes
 
 // catch 404 and forward to error handler
