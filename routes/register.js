@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 // Route for handling user registration
 router.post('/', (req, res) => {
-  res.render('register');
+  res.render('index');
 });
 
 module.exports = router;
