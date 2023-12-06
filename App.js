@@ -9,7 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
-var videosRouter = require('./routes/videosRouter');
+var videosRouter = require('./routes/videos');
 
 var app = express();
 
