@@ -6,5 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('login');
 });
 
+// user verification 
 
 module.exports = router;
