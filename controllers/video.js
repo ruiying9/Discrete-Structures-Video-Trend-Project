@@ -10,7 +10,7 @@ exports.searchVideos = function(req, res) {
     res.render('videos', { videos: results });
   });
 };
-s
+
 exports.saveVideo = function(req, res) {
   const userId = req.user.id; // Assuming you have authentication and the user's ID is available
   const videoId = req.body.videoId; // The ID of the video to save, sent from the frontend
