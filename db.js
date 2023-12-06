@@ -8,9 +8,44 @@ const connection = mysql.createConnection({
   database: 'mydatabase'
 });
 
+// Function to set up the database (create stored procedure and trigger)
+const setupDatabase = () => {
+  const createProcedure = `
+    CREATE PROCEDURE UpdateVideoRating(IN videoID INT)
+    BEGIN
+      DECLARE newLikes INT;
+      SELECT Likes + 1 INTO newLikes FROM Engagement_metrics WHERE Video_id = videoID;
+      UPDATE Engagement_metrics SET Likes = newLikes WHERE Video_id = videoID;
+    END;
+  `;
+
+  const createTrigger = `
+    CREATE TRIGGER AfterUserInteraction AFTER INSERT ON VideoUserInteraction
+    FOR EACH ROW
+    BEGIN
+      IF NEW.Interaction_Type = 'like' THEN
+        CALL UpdateVideoRating(NEW.VideoID);
+      END IF;
+    END;
+  `;
+
+  // Run the SQL for creating the stored procedure and trigger
+  connection.query(createProcedure, (error, results, fields) => {
+    if (error) throw error;
+    console.log('Stored procedure created successfully.');
+  });
+
+  connection.query(createTrigger, (error, results, fields) => {
+    if (error) throw error;
+    console.log('Trigger created successfully.');
+  });
+};
+
+// Establish the database connection and set up the database
 connection.connect((err) => {
   if (err) throw err;
-  console.log('Database connection established successfully.');
+  console.log('Connected to the database.');
+  setupDatabase();
 });
 
 const search = (term, sortBy = 'Video_ID', order = 'ASC', callback) => {
@@ -32,5 +67,5 @@ const saveVideoForUser = (userId, videoId, callback) => {
 module.exports = {
   connection,
   search,
-   saveVideoForUser
+  saveVideoForUser
 };
