@@ -8,6 +8,7 @@ const connection = mysql.createConnection({
   database: 'mydatabase'
 });
 
+/*
 // Function to set up the database (create stored procedure and trigger)
 const setupDatabase = () => {
   const createProcedure = `
@@ -69,3 +70,4 @@ module.exports = {
   search,
   saveVideoForUser
 };
+*/
