@@ -18,9 +18,7 @@ const getUser = async (req, res) => {
         const id = req.params.id;
         const userSelect = 'SELECT * FROM User WHERE User_id = ?';
         const result = await db.query(userSelect, id);
-        res.status(200).json({
-            message: "OK"
-        });
+        res.render('index');
     } catch (err) {
         console.error(err);
         res.status(500).send(err.message);
@@ -34,10 +32,7 @@ const addUser = async (req, res) => {
         const result = await db.query(userCreate, [name, password, email]);
 
         const insertID = result.insertId;
-        res.status(200).json({
-            message: "OK",
-            insertID: insertID
-        });
+        res.render('index');
     } catch (err) {
         console.error(err);
         res.status(500).send(err.message);

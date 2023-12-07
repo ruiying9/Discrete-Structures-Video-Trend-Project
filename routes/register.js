@@ -8,8 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 // Route for handling user registration
-router.post('/', (req, res) => {
-  res.render('index');
-});
+router.post('/', userController.addUser);
+
 
 module.exports = router;
