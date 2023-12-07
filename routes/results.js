@@ -7,7 +7,5 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/delete', videoController.deleteVideo);
-/* GET result page. */
 
 module.exports = router;
