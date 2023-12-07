@@ -5,8 +5,8 @@ const db = require('../db.js');
 
 exports.searchVideos = function(req, res) {
   const term = req.query.term;
-  const sortBy = req.query.sortBy;
-  const order = req.query.order;
+  const sortBy = req.query.sortBy || 'Video_ID';
+  const order = req.query.order || 'ASC';
   
   db.search(term, sortBy, order, function(results) {
     res.render('results', { videos: results });
