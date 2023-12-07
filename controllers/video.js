@@ -33,8 +33,5 @@ exports.deleteVideo = function(req, res) {
 
 // ... other video routes ...
 
-// Route to handle saving a video
-router.post('/save', videoController.saveVideo);
-
 module.exports = router;
 
