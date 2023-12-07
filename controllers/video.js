@@ -1,4 +1,9 @@
 // controllers/video.js
+
+// routes/videos.js
+const express = require('express');
+const router = express.Router();
+const videoController = require('../controllers/video');
 const db = require('../db.js');
 
 exports.searchVideos = function(req, res) {
@@ -30,10 +35,6 @@ exports.deleteVideo = function(req, res) {
 };
 
 
-// routes/videos.js
-const express = require('express');
-const router = express.Router();
-const videoController = require('../controllers/video');
 
 // ... other video routes ...
 
