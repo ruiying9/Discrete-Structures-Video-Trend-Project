@@ -49,8 +49,21 @@
           </div>
 
 
+
+          <div class="favorites-section">
+            <% if(favorites && favorites.length > 0) { %>
+              <% favorites.forEach(function(video) { %>
+                <div class="favorite-video">
+                  <img src="<%= video.thumbnail %>" alt="Video Thumbnail">
+                  <h3><%= video.title %></h3>
+                  <a href="/watch/<%= video.id %>">Watch Video</a>
+                </div>
+              <% }); %>
+            <% } else { %>
+              <p>No favorite videos yet.</p>
+            <% } %>
+          </div>
        
-        
         
         
       </div>
