@@ -21,17 +21,17 @@ const search = (term, sortBy = 'Video_ID', order = 'ASC', callback) => {
   });
 };
 
-const saveVideoForUser = (userId, videoId, callback) => {
-  const query = "INSERT INTO SavedVideos (userId, videoId) VALUES (?, ?)";
-  connection.query(query, [userId, videoId], function(error, results, fields) {
+const saveVideoForUser = (videoId, callback) => {
+  const query = "INSERT INTO SavedVideos (videoId) VALUES (?)";
+  connection.query(query, [videoId], function(error, results, fields) {
     if (error) throw error;
     callback(results);
   });
 };
 
-const deleteVideoForUser = (userId, videoId, callback) => {
-    const query = "DELETE FROM SavedVideos WHERE userId = ? AND videoId = ?";
-    connection.query(query, [userId, videoId], function(error, results, fields) {
+const deleteVideoForUser = (videoId, callback) => {
+    const query = "DELETE FROM SavedVideos WHERE videoId = ?";
+    connection.query(query, [videoId], function(error, results, fields) {
         if (error) throw error;
         callback(results);
     });
