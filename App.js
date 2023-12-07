@@ -11,7 +11,6 @@ var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
 var resultsRouter = require('./routes/results');
 var favoritesRouter = require('./routes/favorites');
-//var videosRouter = require('./routes/videos');
 
 var app = express();
 

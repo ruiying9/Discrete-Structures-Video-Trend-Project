@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const videoController = require('../controllers/video');
+var express = require('express');
+var router = express.Router();
+var videoController = require('../controllers/video');
 
 router.get('/results', (req, res) => {
-  const term = req.query.term;
+  var term = req.query.term;
 
   videoController.searchVideos(term, sortBy, order, (results) => {
       res.render('results', { videos: results });
