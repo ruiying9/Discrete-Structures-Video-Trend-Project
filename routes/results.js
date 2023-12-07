@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('results');
 });
 
-router.post('/:id', videoController.saveVideo);
+
+//router.post('/:id', videoController.saveVideo);
 
 module.exports = router;
