@@ -8,7 +8,8 @@ router.get('/', function(req, res, next) {
 });
 
 // user verification 
-router.get('/:id',userController.getUser);
-
+router.get('/', userController.getUser, (req, res) => {
+  res.render('index');
+});
 
 module.exports = router;
